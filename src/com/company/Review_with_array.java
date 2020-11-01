@@ -1,43 +1,43 @@
-/**
+package com.company; /**
  * Author: Mohahnad Albdri
  * Sub:CodeReview 1
  */
 
-package com.company;
-
 
 import java.util.Scanner;
 
-public class Main {
+public class Review_with_array {
+
+
     //1. Create a Java class with a main() method that can be used for running the program
     public static void main(String[] args) {
         /*2. Create a solution for the following problem: given a width and a height of a rectangular (image below, left side),
          calculate the rectangular area.
          */
 
-        double rectangularArea = getRectangularArea(5, 2);
+        double rectangularArea = getRectangularArea(500, 200);
 
+        System.out.println("The rectangularArea is: " + rectangularArea + "cm");
 
         /*3. Create this solution with the usage of a new Java method calculateRectArea, that returns a computed value.
          Call this method with two different sets of arguments: 20cm (width1) and 30cm (height1), as well as 40cm (width2)
          and 50cm(height2)
          */
-        double a[] = {20, 30};
-        double b[] = {40, 50};
-        double c[] = new double[2];
-        for (int i = 0; i < c.length; i++) {
-            c[i] = (a[i] + b[i]) / 2;
-
-        }
-        String msg = "";
-        for (double i : c) {
-            msg = msg + i + "\n";
-        }
-        System.out.println("The new length and width is" + "\n" + msg);
 
 
-        double rectangularArea1 = getRectangularArea(30, 40);
-        System.out.println(" the area of new rectangular" + rectangularArea1);
+        double array1[] = {20, 30};
+        double array2[] = {40, 50};
+
+        double rectangularAreaResult1 = getRectangularAreaByArray(array1);
+        System.out.println(" the area of new rectangular [1]: " + rectangularAreaResult1);
+
+        double rectangularAreaResult2 = getRectangularAreaByArray(array2);
+        System.out.println(" the area of new rectangular [2]: " + rectangularAreaResult2+ "cm");
+
+
+
+
+
 
         /*4. Create a solution for the following problem: given a width of a square (image below, right side),
          calculate the squareArea (on image below 16cm²)  and the squarePerimeter (Perimeter:  line forming the boundary of a closed
@@ -45,10 +45,10 @@ public class Main {
          cm; for a square with a width = 2cm, squarePerimeter  is 8cm)
       */
 
-        double squareArea = getSquareArea(4);
-        System.out.println("squareArea is =" + "\t" + squareArea);
-        double squarePerimeter = getSquarePerimeter(4);
-        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter);
+        double squareArea = getSquareArea(400);
+        System.out.println("squareArea is =" + "\t" + squareArea+ "cm");
+        double squarePerimeter = getSquarePerimeter(400);
+        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter+ "cm");
 
         //5. Demonstrate solutions from point 3 and 4 with several method calls (at least 3 for each) with different arguments.
 
@@ -57,9 +57,28 @@ public class Main {
         double manyRectangularArea = getRectangularArea(w, l);
         double ManySquareArea = getSquareArea(l);
         double manySquarePerimeter = getSquarePerimeter(l);
-        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter);
-        System.out.println("Rectangular Area is : " + manyRectangularArea);
-        System.out.println("squareArea is =" + "\t" + squareArea);
+        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter+ "cm");
+        System.out.println("Rectangular Area is : " + manyRectangularArea+ "cm");
+        System.out.println("squareArea is =" + "\t" + squareArea+ "cm");
+
+        //Bonus points
+        //1
+        double [] arr=new double[2];
+        Scanner scanner=new Scanner(System.in);
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("enter the number");
+            arr[j]=scanner.nextDouble();
+        }
+
+        double res= 0;
+        for (int i = 0; i < arr.length; i++) {
+            res=res+(arr[0]*arr[1]);
+
+            System.out.println(res);
+            break;
+        }
+        //2
+
     }
 
 
@@ -95,6 +114,12 @@ public class Main {
     public static double getSquarePerimeter(double l) {
         double squareArea = 4 * l;
         return squareArea;
+    }
+
+    public static double getRectangularAreaByArray(double arrayDimensions[]) {
+
+
+        return arrayDimensions[0] * arrayDimensions[1];
     }
 
 }

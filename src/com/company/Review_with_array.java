@@ -10,19 +10,22 @@ public class Review_with_array {
 
 
     //1. Create a Java class with a main() method that can be used for running the program
-    public static void main(String[] args) {
-        /*2. Create a solution for the following problem: given a width and a height of a rectangular (image below, left side),
+    public static void main (String[] args) {
+       /*
+       //2. Create a solution for the following problem: given a width and a height of a rectangular (image below, left side),
+
+
          calculate the rectangular area.
-         */
+
 
         double rectangularArea = getRectangularArea(500, 200);
 
-        System.out.println("The rectangularArea is: " + rectangularArea + "cm");
+        System.out.println("The rectangularArea is: " + rectangularArea + "cm2");
 
-        /*3. Create this solution with the usage of a new Java method calculateRectArea, that returns a computed value.
-         Call this method with two different sets of arguments: 20cm (width1) and 30cm (height1), as well as 40cm (width2)
-         and 50cm(height2)
-         */
+        //3. Create this solution with the usage of a new Java method calculateRectArea, that returns a computed value.
+         //Call this method with two different sets of arguments: 20cm (width1) and 30cm (height1), as well as 40cm (width2)
+         //and 50cm(height2)
+
 
 
         double array1[] = {20, 30};
@@ -32,23 +35,23 @@ public class Review_with_array {
         System.out.println(" the area of new rectangular [1]: " + rectangularAreaResult1);
 
         double rectangularAreaResult2 = getRectangularAreaByArray(array2);
-        System.out.println(" the area of new rectangular [2]: " + rectangularAreaResult2+ "cm");
+        System.out.println(" the area of new rectangular [2]: " + rectangularAreaResult2 + "cm2");
 
 
 
 
 
 
-        /*4. Create a solution for the following problem: given a width of a square (image below, right side),
-         calculate the squareArea (on image below 16cm²)  and the squarePerimeter (Perimeter:  line forming the boundary of a closed
-         geometrical figure.  Example: for a square with a width = 4cm, squarePerimeter  is 16
-         cm; for a square with a width = 2cm, squarePerimeter  is 8cm)
-      */
+        //4. Create a solution for the following problem: given a width of a square (image below, right side),
+         //calculate the squareArea (on image below 16cm²)  and the squarePerimeter (Perimeter:  line forming the boundary of a closed
+         //geometrical figure.  Example: for a square with a width = 4cm, squarePerimeter  is 16
+          // cm; for a square with a width = 2cm, squarePerimeter  is 8cm)
+
 
         double squareArea = getSquareArea(400);
-        System.out.println("squareArea is =" + "\t" + squareArea+ "cm");
+        System.out.println("squareArea is =" + "\t" + squareArea + "cm2");
         double squarePerimeter = getSquarePerimeter(400);
-        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter+ "cm");
+        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter + "cm2");
 
         //5. Demonstrate solutions from point 3 and 4 with several method calls (at least 3 for each) with different arguments.
 
@@ -57,28 +60,24 @@ public class Review_with_array {
         double manyRectangularArea = getRectangularArea(w, l);
         double ManySquareArea = getSquareArea(l);
         double manySquarePerimeter = getSquarePerimeter(l);
-        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter+ "cm");
-        System.out.println("Rectangular Area is : " + manyRectangularArea+ "cm");
-        System.out.println("squareArea is =" + "\t" + squareArea+ "cm");
+        System.out.println("SquarePerimeter is " + "\t" + squarePerimeter + "cm2");
+        System.out.println("Rectangular Area is : " + manyRectangularArea + "cm2");
+        System.out.println("squareArea is =" + "\t" + squareArea + "cm");
+*/
+        // The solve with Array
+         //RectangularArea
+        double RectangularAreaByArr = getRectangularAreaByArr();
 
-        //Bonus points
-        //1
-        double [] arr=new double[2];
-        Scanner scanner=new Scanner(System.in);
-        for (int j = 0; j < arr.length; j++) {
-            System.out.println("enter the number");
-            arr[j]=scanner.nextDouble();
-        }
+        System.out.println("RectangularArea is " + "\t" + RectangularAreaByArr + "cm2");
 
-        double res= 0;
-        for (int i = 0; i < arr.length; i++) {
-            res=res+(arr[0]*arr[1]);
+        //SquareArea
+        double SquareAreaByArr = getSquareAreaByArr();
+        System.out.println("SquareArea is " + "\t" + SquareAreaByArr + "cm2");
 
-            System.out.println(res);
-            break;
-        }
-        //2
 
+        //SquarePerimeter
+        double SquareParameterByArr = getSquareParameterByArr();
+        System.out.println("SquarePerimeter is " + "\t" + SquareParameterByArr + "cm2");
     }
 
 
@@ -122,4 +121,60 @@ public class Review_with_array {
         return arrayDimensions[0] * arrayDimensions[1];
     }
 
+    public static double getRectangularAreaByArr() {
+
+        double[] arr = new double[2];
+        Scanner scanner = new Scanner(System.in);
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("enter the number");
+            arr[j] = scanner.nextDouble();
+        }
+
+        double res = 0;
+        for (int i = 0; i < arr.length; i++) {
+            res = res + (arr[0] * arr[1]);
+
+
+            break;
+        }
+        return res;
+    }
+
+    public static double getSquareAreaByArr() {
+
+        double[] arr = new double[1];
+        Scanner scanner = new Scanner(System.in);
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("enter the number");
+            arr[j] = scanner.nextDouble();
+        }
+
+        double res = 0;
+        for (int i = 0; i < arr.length; i++) {
+            res = res + (arr[i] * arr[i]);
+
+
+            break;
+        }
+        return res;
+    }
+
+    public static double getSquareParameterByArr() {
+
+        double[] arr = new double[1];
+        Scanner scanner = new Scanner(System.in);
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("enter the number");
+            arr[j] = scanner.nextDouble();
+        }
+
+        double res = 0;
+        for (int i = 0; i < arr.length; i++) {
+            res = res + 4 * (arr[i]);
+
+
+            break;
+        }
+        return res;
+    }
 }
